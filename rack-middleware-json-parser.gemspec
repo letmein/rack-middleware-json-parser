@@ -12,6 +12,7 @@ Gem::Specification.new do |gem|
   gem.authors     = ["Yuriy Kharchenko"]
   gem.email       = 'yuri.kharchenko@gmail.com'
   gem.homepage    = 'https://github.com/letmein/rack-middleware-json-parser'
+  gem.license     = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
