@@ -5,7 +5,7 @@ require 'rack/middleware/json_parser'
 
 Gem::Specification.new do |gem|
   gem.name        = 'rack-middleware-json-parser'
-  gem.version     = '0.0.1'
+  gem.version     = '0.0.2'
   gem.date        = '2013-08-02'
   gem.summary     = "Rack middleware JSON parser"
   gem.description = "Rack middleware for parsing json requests."
