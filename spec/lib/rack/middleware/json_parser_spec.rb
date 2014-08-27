@@ -42,6 +42,17 @@ describe Rack::Middleware::JsonParser do
       end
     end
 
+    context "requested via PATCH" do
+      before do
+        patch '/', '{"foo":"bar"}', 'CONTENT_TYPE' => 'application/json'
+      end
+
+      it "should parse json" do
+        last_response.should be_ok
+        last_response.body.should eq '{:foo=>"bar"}'
+      end
+    end
+
     context "with invalid JSON" do
       it "should raise error" do
         expect { post '/', '{"foobar"}', 'CONTENT_TYPE' => 'application/json' }.to raise_error(Rack::Middleware::JsonParser::Error)
