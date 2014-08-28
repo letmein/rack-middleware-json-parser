@@ -95,5 +95,17 @@ describe Rack::Middleware::JsonParser do
     end
   end
 
+  context "without Content-Type" do
+    context "requested via GET" do
+      before do
+        get '/', {}
+      end
+
+      it "should not parse json" do
+        last_response.should be_ok
+        last_response.body.should eq 'ok'
+      end
+    end
+  end
 end
 
